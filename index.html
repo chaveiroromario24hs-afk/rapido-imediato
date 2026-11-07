@@ -1,1 +1,324 @@
-index.html
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111111">
+<title>Rápido Imediato Chaveiro | Interlagos e Região</title>
+<meta name="description" content="Chaveiro móvel em Interlagos e região. Abertura de portas residenciais e automotivas, chaves codificadas e atendimento externo. Ligue ou chame no WhatsApp!">
+<meta name="keywords" content="chaveiro Interlagos, chaveiro automotivo, abertura de veículos, abertura de portas, chaveiro residencial, chave codificada">
+<style>
+:root {
+  --gold: #d5ad59;
+  --dark: #111111;
+  --gray: #1d1d1d;
+  --white: #ffffff;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:#111;
+  color:white;
+  line-height:1.6;
+}
+a { text-decoration:none; color:inherit; }
+header {
+  background:#090909;
+  border-bottom:1px solid #383020;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.container { width:90%; max-width:1150px; margin:auto; }
+.nav {
+  min-height:78px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+.logo {
+  color:var(--gold);
+  font-size:21px;
+  font-weight:900;
+  line-height:1.15;
+}
+.logo small {
+  display:block;
+  color:white;
+  font-size:11px;
+  letter-spacing:4px;
+  margin-top:5px;
+}
+.menu { display:flex; gap:25px; align-items:center; font-size:14px; }
+.menu a:hover { color:var(--gold); }
+.btn {
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:7px;
+  font-weight:bold;
+  text-align:center;
+  transition:.2s;
+}
+.btn:hover { transform:translateY(-2px); }
+.gold { background:var(--gold); color:#111; }
+.outline { border:1px solid var(--gold); color:var(--gold); }
+.hero {
+  min-height:570px;
+  display:flex;
+  align-items:center;
+  background:
+    radial-gradient(ellipse at 80% 50%, #44351d 0%, transparent 45%),
+    linear-gradient(120deg,#111 45%,#211b10);
+}
+.hero-content { max-width:720px; padding:85px 0; }
+.tag {
+  display:inline-block;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:7px 13px;
+  border-radius:30px;
+  font-size:12px;
+  letter-spacing:1px;
+  margin-bottom:22px;
+}
+h1 {
+  font-size:clamp(36px,6vw,64px);
+  line-height:1.08;
+  margin-bottom:22px;
+}
+h1 span, h2 span { color:var(--gold); }
+.hero p { color:#ddd; font-size:18px; max-width:600px; margin-bottom:30px; }
+.actions { display:flex; flex-wrap:wrap; gap:12px; }
+section { padding:75px 0; }
+.section-title { text-align:center; margin-bottom:42px; }
+.section-title h2 { font-size:34px; margin-bottom:10px; }
+.section-title p { color:#bbb; }
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.card {
+  background:#1d1d1d;
+  border:1px solid #38332a;
+  border-radius:12px;
+  padding:27px;
+  transition:.2s;
+}
+.card:hover { border-color:var(--gold); transform:translateY(-4px); }
+.card .symbol { font-size:35px; margin-bottom:15px; }
+.card h3 { color:var(--gold); font-size:19px; margin-bottom:10px; }
+.card p { color:#ccc; font-size:14px; }
+.why { background:#191919; }
+.why-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  text-align:center;
+}
+.why-item { padding:20px; }
+.why-item strong { display:block; color:var(--gold); font-size:19px; margin-bottom:8px; }
+.why-item p { color:#bbb; font-size:14px; }
+.cta {
+  text-align:center;
+  background:linear-gradient(120deg,#282014,#111);
+  border-top:1px solid #514020;
+  border-bottom:1px solid #514020;
+}
+.cta h2 { font-size:34px; margin-bottom:15px; }
+.cta p { color:#ddd; margin-bottom:25px; }
+.contact-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+.contact-box {
+  background:#1d1d1d;
+  padding:28px;
+  border-radius:12px;
+  border:1px solid #38332a;
+}
+.contact-box h3 { color:var(--gold); margin-bottom:15px; }
+.contact-box p { color:#ddd; margin:10px 0; }
+footer {
+  background:#080808;
+  padding:30px 0;
+  text-align:center;
+  color:#aaa;
+  font-size:13px;
+}
+footer strong { color:var(--gold); }
+.float {
+  position:fixed;
+  bottom:22px;
+  right:20px;
+  z-index:20;
+  background:#20bd62;
+  color:white;
+  border-radius:50px;
+  padding:15px 20px;
+  font-weight:bold;
+  box-shadow:0 4px 20px #0008;
+}
+@media(max-width:750px) {
+  .menu { display:none; }
+  .nav { min-height:68px; }
+  .hero { min-height:500px; }
+  .hero-content { padding:65px 0; }
+  .cards,.why-grid,.contact-grid { grid-template-columns:1fr; }
+  section { padding:55px 0; }
+  .section-title h2,.cta h2 { font-size:28px; }
+  .actions .btn { width:100%; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">
+      RÁPIDO IMEDIATO
+      <small>CHAVEIRO</small>
+    </a>
+    <nav class="menu">
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn gold" href="https://wa.me/5511986039930" target="_blank">WhatsApp</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="tag">CHAVEIRO MÓVEL • INTERLAGOS E REGIÃO</div>
+      <h1>Precisou de um chaveiro?<br><span>Vamos até você!</span></h1>
+      <p>
+        Soluções em abertura de portas residenciais e automotivas,
+        chaves codificadas e serviços de chaveiro externo.
+      </p>
+      <div class="actions">
+        <a class="btn gold" href="https://wa.me/5511986039930?text=Olá!%20Preciso%20de%20um%20chaveiro." target="_blank">CHAMAR NO WHATSAPP</a>
+        <a class="btn outline" href="tel:+5511986039930">LIGAR AGORA</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="container">
+    <div class="section-title">
+      <h2>Nossos <span>serviços</span></h2>
+      <p>Atendimento automotivo e residencial onde você precisar.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="symbol">🚗</div>
+        <h3>Abertura de veículos</h3>
+        <p>Atendimento para abertura de carros quando você perde a chave ou fica sem acesso ao veículo.</p>
+      </article>
+      <article class="card">
+        <div class="symbol">🏠</div>
+        <h3>Abertura residencial</h3>
+        <p>Serviços de abertura de portas e soluções para problemas com fechaduras e chaves.</p>
+      </article>
+      <article class="card">
+        <div class="symbol">🔑</div>
+        <h3>Chaves automotivas</h3>
+        <p>Cópias de chaves, chaves codificadas e modelos canivete para veículos compatíveis.</p>
+      </article>
+      <article class="card">
+        <div class="symbol">🔒</div>
+        <h3>Fechaduras</h3>
+        <p>Serviços de troca e substituição de fechaduras residenciais.</p>
+      </article>
+      <article class="card">
+        <div class="symbol">🗝️</div>
+        <h3>Cópias de chaves</h3>
+        <p>Confecção de cópias de chaves conforme o modelo e a necessidade.</p>
+      </article>
+      <article class="card">
+        <div class="symbol">📍</div>
+        <h3>Atendimento externo</h3>
+        <p>Deslocamento para atendimento em Interlagos e bairros próximos, conforme disponibilidade.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="sobre">
+  <div class="container">
+    <div class="section-title">
+      <h2>Por que chamar a <span>Rápido Imediato?</span></h2>
+      <p>Praticidade e atendimento direto para resolver seu problema.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <strong>Atendimento móvel</strong>
+        <p>Vamos até o local do atendimento, conforme disponibilidade.</p>
+      </div>
+      <div class="why-item">
+        <strong>Automotivo e residencial</strong>
+        <p>Soluções para veículos, casas e fechaduras.</p>
+      </div>
+      <div class="why-item">
+        <strong>Contato direto</strong>
+        <p>Fale conosco pelo WhatsApp e explique o que precisa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Está precisando de um chaveiro?</h2>
+    <p>Entre em contato, informe sua localização e conte o que aconteceu.</p>
+    <a class="btn gold" href="https://wa.me/5511986039930?text=Olá!%20Preciso%20de%20um%20chaveiro.%20Minha%20localização%20é:" target="_blank">SOLICITAR ATENDIMENTO</a>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="container">
+    <div class="section-title">
+      <h2>Fale <span>conosco</span></h2>
+      <p>Estamos prontos para receber sua solicitação.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-box">
+        <h3>Atendimento</h3>
+        <p><strong>WhatsApp:</strong> (11) 98603-9930</p>
+        <p><strong>Telefone:</strong> (11) 98603-9930</p>
+        <p><strong>Região:</strong> Interlagos e bairros próximos — São Paulo/SP.</p>
+        <p><strong>Modalidade:</strong> Atendimento externo automotivo e residencial.</p>
+      </div>
+      <div class="contact-box">
+        <h3>Peça seu atendimento</h3>
+        <p>Envie uma mensagem com:</p>
+        <p>• Seu bairro ou localização.</p>
+        <p>• Se o serviço é automotivo ou residencial.</p>
+        <p>• O que aconteceu.</p>
+        <a class="btn gold" href="https://wa.me/5511986039930" target="_blank">ABRIR WHATSAPP</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong>RÁPIDO IMEDIATO CHAVEIRO</strong>
+    <p>Atendimento externo automotivo e residencial.</p>
+    <p>Interlagos e região — São Paulo/SP.</p>
+    <p>© 2026 Rápido Imediato. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<a class="float" href="https://wa.me/5511986039930" target="_blank" aria-label="Fale pelo WhatsApp">WhatsApp</a>
+
+</body>
+</html>
